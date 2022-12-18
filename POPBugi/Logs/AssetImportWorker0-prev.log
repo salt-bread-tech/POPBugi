@@ -15,7 +15,7 @@ C:/git/POPBugi/POPBugi
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-56718
+50090
 Successfully changed project path to: C:/git/POPBugi/POPBugi
 C:/git/POPBugi/POPBugi
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ C:/git/POPBugi/POPBugi
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [8780] Host "[IP] 211.63.134.107 [Port] 0 [Flags] 2 [Guid] 4084585746 [EditorId] 4084585746 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-4UJOGO6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [2128] Host "[IP] 211.217.100.214 [Port] 0 [Flags] 2 [Guid] 975469662 [EditorId] 975469662 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-4UJOGO6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [8780] Host "[IP] 211.63.134.107 [Port] 0 [Flags] 2 [Guid] 4084585746 [EditorId] 4084585746 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-4UJOGO6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [2128] Host "[IP] 211.217.100.214 [Port] 0 [Flags] 2 [Guid] 975469662 [EditorId] 975469662 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-4UJOGO6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 88.49 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 80.27 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.15f1 (e8e88683f834)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity 2021.3.15f1/Editor/Data/Resources/UnitySubsystems
@@ -67,93 +67,93 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity 2021.3.15f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity 2021.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity 2021.3.15f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56644
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56792
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity 2021.3.15f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity 2021.3.15f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 Register platform support module: C:/Program Files/Unity 2021.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005959 seconds.
+Registered in 0.004979 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 78.87 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 82.87 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.556 seconds
+- Completed reload, in  0.562 seconds
 Domain Reload Profiling:
-	ReloadAssembly (557ms)
-		BeginReloadAssembly (61ms)
+	ReloadAssembly (562ms)
+		BeginReloadAssembly (57ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (404ms)
-			LoadAssemblies (60ms)
+		EndReloadAssembly (414ms)
+			LoadAssemblies (56ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (92ms)
+			SetupTypeCache (98ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (23ms)
-			SetupLoadedEditorAssemblies (247ms)
+			SetupLoadedEditorAssemblies (249ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (45ms)
+				InitializePlatformSupportModulesInManaged (48ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (79ms)
+				RefreshPlugins (83ms)
 				BeforeProcessingInitializeOnLoad (1ms)
 				ProcessInitializeOnLoadAttributes (79ms)
-				ProcessInitializeOnLoadMethodAttributes (43ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006810 seconds.
+Registered in 0.005414 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 82.15 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 87.69 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.969 seconds
+- Completed reload, in  0.992 seconds
 Domain Reload Profiling:
-	ReloadAssembly (970ms)
-		BeginReloadAssembly (90ms)
+	ReloadAssembly (993ms)
+		BeginReloadAssembly (91ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (16ms)
-		EndReloadAssembly (775ms)
-			LoadAssemblies (70ms)
+		EndReloadAssembly (799ms)
+			LoadAssemblies (72ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (209ms)
+			SetupTypeCache (216ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (45ms)
-			SetupLoadedEditorAssemblies (411ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (425ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (21ms)
+				InitializePlatformSupportModulesInManaged (18ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (82ms)
-				BeforeProcessingInitializeOnLoad (84ms)
-				ProcessInitializeOnLoadAttributes (183ms)
-				ProcessInitializeOnLoadMethodAttributes (34ms)
-				AfterProcessingInitializeOnLoad (6ms)
+				RefreshPlugins (88ms)
+				BeforeProcessingInitializeOnLoad (87ms)
+				ProcessInitializeOnLoadAttributes (192ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
+				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.65 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.70 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4045 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 44 unused Assets / (229.0 KB). Loaded Objects now: 4497.
 Memory consumption went from 150.7 MB to 150.5 MB.
-Total: 3.039500 ms (FindLiveObjects: 0.288400 ms CreateObjectMapping: 0.325800 ms MarkObjects: 2.301300 ms  DeleteObjects: 0.123000 ms)
+Total: 2.990200 ms (FindLiveObjects: 0.287200 ms CreateObjectMapping: 0.243800 ms MarkObjects: 2.325600 ms  DeleteObjects: 0.132800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -167,101 +167,43 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 4709.617201 seconds.
+  Time since last request: 561.031378 seconds.
   path: Assets/images/로그인로고.png
   artifactKey: Guid(bf99ae2378ec5024e95f413edeba17c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/images/로그인로고.png using Guid(bf99ae2378ec5024e95f413edeba17c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33c438a66804c70f0e272f14adee9046') in 0.146913 seconds 
+Start importing Assets/images/로그인로고.png using Guid(bf99ae2378ec5024e95f413edeba17c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '594cf5e5528cd1613942e89b226d1d9d') in 0.131771 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 153.867706 seconds.
-  path: Assets/Scenes/MainScene.unity
-  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/MainScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78aab452198ba38b836640c4aa00d548') in 0.004256 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 15.566430 seconds.
+  Time since last request: 2380.589220 seconds.
   path: Assets/Scenes/LoginScene.unity
   artifactKey: Guid(fe256def40ab46f49904d3139b11d4e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/LoginScene.unity using Guid(fe256def40ab46f49904d3139b11d4e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9c8e66faeee365eb756aa7995924931') in 0.004202 seconds 
+Start importing Assets/Scenes/LoginScene.unity using Guid(fe256def40ab46f49904d3139b11d4e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca04e7608674bf96b1dd7850d90a019d') in 0.004220 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 153.372604 seconds.
-  path: Assets/images/자동로그인선택창.png
-  artifactKey: Guid(eba6a83be4e37cd4abab37aa3f42887f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/images/자동로그인선택창.png using Guid(eba6a83be4e37cd4abab37aa3f42887f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b303bf7f5b89cada3143fe06992396f8') in 0.013590 seconds 
+  Time since last request: 33.137220 seconds.
+  path: Assets/Scenes/MainScene.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/MainScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcd2c8e8e725bf52bb25122943886f56') in 0.004496 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.862370 seconds.
-  path: Assets/images/자동로그인텍스트.png
-  artifactKey: Guid(574a626aa0d063243954c7acb2dd9301) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/images/자동로그인텍스트.png using Guid(574a626aa0d063243954c7acb2dd9301) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a923ff147cb56e405327513633889eb') in 0.016598 seconds 
+  Time since last request: 18.013030 seconds.
+  path: Assets/images/login
+  artifactKey: Guid(f459ebfe0b1514f45b9f147af36a4e52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/images/login using Guid(f459ebfe0b1514f45b9f147af36a4e52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ffd603cbe8c171c06284ccd2c404534') in 0.004033 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 511.346862 seconds.
-  path: Assets/images/구글로그인 1.png
-  artifactKey: Guid(c2c2bc3129951b54ab6b527b4e36cf3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/images/구글로그인 1.png using Guid(c2c2bc3129951b54ab6b527b4e36cf3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3330d30d3ef50dcc2d251e10d2e63787') in 0.019084 seconds 
+  Time since last request: 5.047845 seconds.
+  path: Assets/images/main
+  artifactKey: Guid(31097e5b5a5730f4bba23123495481b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/images/main using Guid(31097e5b5a5730f4bba23123495481b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0021c3382102ed1a4c44a126d059960b') in 0.004981 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 17.088368 seconds.
-  path: Assets/images/카카오로그인.png
-  artifactKey: Guid(9ea76e384c89fc84481351fb528e7fb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/images/카카오로그인.png using Guid(9ea76e384c89fc84481351fb528e7fb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4dbbbf9a366b5c2a14852dfd9d941921') in 0.022034 seconds 
+  Time since last request: 10.041179 seconds.
+  path: Assets/images/main/입벌부.png
+  artifactKey: Guid(1907502d49d58734b8f9fc71e8647e22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/images/main/입벌부.png using Guid(1907502d49d58734b8f9fc71e8647e22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3ce8503b2d434a5239ba66484afbddd') in 0.035332 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.056290 seconds.
-  path: Assets/images/구글로그인.png
-  artifactKey: Guid(c2c2bc3129951b54ab6b527b4e36cf3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/images/구글로그인.png using Guid(c2c2bc3129951b54ab6b527b4e36cf3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02eebc1870770fbb4ad2303048dc0ad1') in 0.025545 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 19.335758 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone.png
-  artifactKey: Guid(62ce01ddca719d34ea9648c586a7cc94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone.png using Guid(62ce01ddca719d34ea9648c586a7cc94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '947340cc73ea1c229024f707a4f18d7e') in 0.022039 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone_Influence@2x.png
-  artifactKey: Guid(7395bf0bc3cc40e4ab2dda5ec6832261) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone_Influence@2x.png using Guid(7395bf0bc3cc40e4ab2dda5ec6832261) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '626d2718d6c692e1e2782c4342a52c63') in 0.034867 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone@3x.png
-  artifactKey: Guid(76beef9fdae7b48468ddf07d0400a374) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone@3x.png using Guid(76beef9fdae7b48468ddf07d0400a374) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6411d0a98327be1b9f1c0e417d5fdc69') in 0.030566 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Bone_Influence@2x.png
-  artifactKey: Guid(0779ad3feec52124e97114bcbb12ef13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Bone_Influence@2x.png using Guid(0779ad3feec52124e97114bcbb12ef13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f188230757d7ea74a7d7660137336cce') in 0.013951 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone_Influence.png
-  artifactKey: Guid(e92fc44f12c21dd44a49e390f39f7ffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone_Influence.png using Guid(e92fc44f12c21dd44a49e390f39f7ffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22671d60829dba31d09c937d1f140ca7') in 0.015748 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.952305 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone_Influence@3x.png
-  artifactKey: Guid(cee9dbe90b270c944ae1dabf41c93b10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone_Influence@3x.png using Guid(cee9dbe90b270c944ae1dabf41c93b10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ea5d50b0be323882fca8a15783dcb71') in 0.013174 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.079786 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone_Influence@4x.png
-  artifactKey: Guid(c7aa62ae78ffca0498c89e5f45f94c0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Bone_Influence@4x.png using Guid(c7aa62ae78ffca0498c89e5f45f94c0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93d5b67f0f134cd3fd0997f1abd40e35') in 0.014200 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.018739 seconds.
-  path: Packages/com.unity.collab-proxy/Editor/PlasticSCM/Assets/Images/buttonssosigninemail.png
-  artifactKey: Guid(d24e7e0b75e1a244bb9687d6fd4315ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.collab-proxy/Editor/PlasticSCM/Assets/Images/buttonssosigninemail.png using Guid(d24e7e0b75e1a244bb9687d6fd4315ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17715c982d88679788133d6f6aba5fb2') in 0.020066 seconds 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+  Time since last request: 77.438628 seconds.
+  path: Assets
+  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79842766b460edbeab6a34051e857a80') in 0.004001 seconds 
