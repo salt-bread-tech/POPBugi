@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "283195960893",
+    "firebase_url": "https://popbugi-default-rtdb.firebaseio.com",
+    "project_id": "popbugi",
+    "storage_bucket": "popbugi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283195960893:android:a4b8ba4929768f766dc454",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.POPBugi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283195960893-nd39igoddmev578js80567u54titr1nf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWOyYihHQ1S9AeIKNDswjZFb-8OBonppY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283195960893-nd39igoddmev578js80567u54titr1nf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "283195960893-aic2hlqrq11gdqna152sb5q8a4v3ivve.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.DefaultCompany.POPBugi"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
