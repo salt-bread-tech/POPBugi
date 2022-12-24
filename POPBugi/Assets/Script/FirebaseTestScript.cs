@@ -5,7 +5,7 @@ using Firebase;
 using Firebase.Database;
 using Firebase.Extensions;
 
-public class NewBehaviourScript : MonoBehaviour
+public class FirebaseTestScript : MonoBehaviour
 {
     DatabaseReference m_Reference;
 
