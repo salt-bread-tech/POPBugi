@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Firebase.Auth;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AuthController : MonoBehaviour
 {
@@ -42,18 +43,20 @@ public class AuthController : MonoBehaviour
 
     void CreateUser()
     {
-        auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task => {
+       auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task => {
             if (!task.IsCanceled && !task.IsFaulted)
             {
                 Firebase.Auth.FirebaseUser newUser = task.Result;
+
                 Debug.LogFormat("Firebase user created successfully: {0} ({1})",
                     newUser.DisplayName, newUser.UserId);
-
                 Debug.Log("회원가입 성공!");
+                return;
             }
             else
             {
                 Debug.Log("회원가입 실패");
+                return;
             }
         });
     }
@@ -61,18 +64,23 @@ public class AuthController : MonoBehaviour
     void LoginUser()
     {
         auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(task => {
-            if (!task.IsCanceled && !task.IsFaulted)
+            if (task.IsCanceled)
             {
-                Firebase.Auth.FirebaseUser newUser = task.Result;
-                Debug.LogFormat("Firebase user created successfully: {0} ({1})",
-                    newUser.DisplayName, newUser.UserId);
-
-                Debug.Log("로그인 성공!");
-            }
-            else
-            {
+                Debug.LogError("SignInWithEmailAndPasswordAsync was canceled.");
                 Debug.Log("로그인 실패");
+                return;
             }
+            if (task.IsFaulted)
+            {
+                Debug.LogError("SignInWithEmailAndPasswordAsync encountered an error: " + task.Exception);
+                Debug.Log("로그인 실패");
+                return;
+            }
+
+            Firebase.Auth.FirebaseUser newUser = task.Result;
+            Debug.LogFormat("User signed in successfully: {0} ({1})",
+                newUser.DisplayName, newUser.UserId);
+            Debug.Log("로그인 성공!");
         });
     }
 }
