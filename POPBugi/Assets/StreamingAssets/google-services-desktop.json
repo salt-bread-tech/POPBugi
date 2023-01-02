@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "283195960893-b5qp8hr56t01o9qjfe3dvlsest1qj9e6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.DefaultCompany.POPBugi",
+            "certificate_hash": "c03198354f13fb781fec8b132210cdbf45bc89b1"
+          }
+        },
+        {
           "client_id": "283195960893-nd39igoddmev578js80567u54titr1nf.apps.googleusercontent.com",
           "client_type": 3
         }

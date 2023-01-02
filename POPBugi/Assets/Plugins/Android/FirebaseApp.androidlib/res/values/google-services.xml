@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/firebase_database_url,@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_android_client_id,@string/default_web_client_id">
+  <string name="firebase_database_url" translatable="false">https://popbugi-default-rtdb.firebaseio.com</string>
+  <string name="gcm_defaultSenderId" translatable="false">283195960893</string>
+  <string name="google_storage_bucket" translatable="false">popbugi.appspot.com</string>
+  <string name="project_id" translatable="false">popbugi</string>
+  <string name="google_api_key" translatable="false">AIzaSyBWOyYihHQ1S9AeIKNDswjZFb-8OBonppY</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBWOyYihHQ1S9AeIKNDswjZFb-8OBonppY</string>
+  <string name="google_app_id" translatable="false">1:283195960893:android:a4b8ba4929768f766dc454</string>
+  <string name="default_android_client_id" translatable="false">283195960893-b5qp8hr56t01o9qjfe3dvlsest1qj9e6.apps.googleusercontent.com</string>
+  <string name="default_web_client_id" translatable="false">283195960893-nd39igoddmev578js80567u54titr1nf.apps.googleusercontent.com</string>
+</resources>
