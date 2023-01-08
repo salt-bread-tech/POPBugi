@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Gohome : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public void MainToHome()
     {
-        
+        SceneManager.LoadScene("HomeScene");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void HomeToMain()
     {
-        
+        SceneManager.LoadScene("MainScene");
     }
 }
+
