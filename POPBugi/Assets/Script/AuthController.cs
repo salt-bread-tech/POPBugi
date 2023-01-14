@@ -15,6 +15,7 @@ public class AuthController : MonoBehaviour
     public InputField inputTextPassword;
 
     FirebaseAuth auth;
+    FirebaseUser user;
 
     void Awake()
     {
@@ -82,5 +83,13 @@ public class AuthController : MonoBehaviour
                 newUser.DisplayName, newUser.UserId);
             Debug.Log("로그인 성공!");
         });
+
+        user = auth.CurrentUser;
+        Debug.Log(user.UserId);
+
+        if (user != null)
+        {
+            SceneManager.LoadSceneAsync("MainScene");
+        }
     }
 }
