@@ -745,6 +745,7 @@ GameObject:
   - component: {fileID: 481019209}
   - component: {fileID: 481019208}
   - component: {fileID: 481019207}
+  - component: {fileID: 481019211}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -842,6 +843,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &481019211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481019206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851eaea5ee46d814e907c4d74ffb5c11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  email: {fileID: 169408182}
+  password: {fileID: 97363968}
+  outputText: {fileID: 0}
 --- !u!1 &516787826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,9 +1563,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1699083404}
-        m_TargetAssemblyTypeName: AuthController, Assembly-CSharp
-        m_MethodName: LoginBtnOnClick
+      - m_Target: {fileID: 481019211}
+        m_TargetAssemblyTypeName: LoginSystemTest, Assembly-CSharp
+        m_MethodName: LogIn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1820,7 +1836,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1699083404
 MonoBehaviour:
   m_ObjectHideFlags: 0
