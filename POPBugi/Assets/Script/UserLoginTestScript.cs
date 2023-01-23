@@ -1,9 +1,10 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using Firebase.Auth;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public class UserLoginTestScript
 {
@@ -21,8 +22,8 @@ public class UserLoginTestScript
         }
     }
 
-    private FirebaseAuth auth;  // ·Î±×ÀÎ / È¸¿ø°¡ÀÔ µî¿¡ »ç¿ë
-    private FirebaseUser user;  // ÀÎÁõÀÌ ¿Ï·áµÈ À¯Àú Á¤º¸
+    private FirebaseAuth auth;  // ë¡œê·¸ì¸ / íšŒì›ê°€ì… ë“±ì— ì‚¬ìš©
+    private FirebaseUser user;  // ì¸ì¦ì´ ì™„ë£Œëœ ìœ ì € ì •ë³´
 
     public string UserId => user.UserId;
 
@@ -31,31 +32,31 @@ public class UserLoginTestScript
     public void Init()
     {
         auth = FirebaseAuth.DefaultInstance;
-        // ÀÓ½ÃÃ³¸®
+        // ì„ì‹œì²˜ë¦¬
         if(auth.CurrentUser != null)
         {
             LogOut();
         }
 
-        auth.StateChanged += OnChanged; // °èÁ¤ »óÅÂ°¡ ¹Ù²ğ ¶§¸¶´Ù È£ÃâµÊ
+        auth.StateChanged += OnChanged; // ê³„ì • ìƒíƒœê°€ ë°”ë€” ë•Œë§ˆë‹¤ í˜¸ì¶œë¨
     }
 
     private void OnChanged(object sender, EventArgs e)
-    // ÀÌº¥Æ® ÇÚµé·¯¿¡ ´ëÇÑ ÇÔ¼ö EventArgs´Â System¿¡ ¼ÓÇÏ±â ¶§¹®¿¡ using System Ãß°¡
+    // ì´ë²¤íŠ¸ í•¸ë“¤ëŸ¬ì— ëŒ€í•œ í•¨ìˆ˜ EventArgsëŠ” Systemì— ì†í•˜ê¸° ë•Œë¬¸ì— using System ì¶”ê°€
     {
         if(auth.CurrentUser != user)
         {
             bool signed = (auth.CurrentUser != user && auth.CurrentUser != null);
             if(!signed && user != null)
             {
-                Debug.Log("·Î±×¾Æ¿ô");
+                Debug.Log("ë¡œê·¸ì•„ì›ƒ");
                 LoginState?.Invoke(false);
             }
 
             user = auth.CurrentUser;
             if (signed)
             {
-                Debug.Log("·Î±×ÀÎ");
+                Debug.Log("ë¡œê·¸ì¸");
                 LoginState?.Invoke(true);
             }
         }
@@ -66,16 +67,16 @@ public class UserLoginTestScript
         auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task => {
             if(task.IsCanceled)
             {
-                // È¸¿ø°¡ÀÔ ½ÇÆĞÇÑ °æ¿ì
-                // 1. ÀÌ¸ŞÀÏÀÌ ºñÁ¤»óÀÎ °æ¿ì
-                // 2. ºñ¹Ğ¹øÈ£°¡ ³Ê¹« °£´ÜÇÑ °æ¿ì
-                // 3. ÀÌ¹Ì °¡ÀÔµÈ ÀÌ¸ŞÀÏÀÎ °æ¿ì
-                Debug.LogError("È¸¿ø°¡ÀÔ Ãë¼Ò");
+                // íšŒì›ê°€ì… ì‹¤íŒ¨í•œ ê²½ìš°
+                // 1. ì´ë©”ì¼ì´ ë¹„ì •ìƒì¸ ê²½ìš°
+                // 2. ë¹„ë°€ë²ˆí˜¸ê°€ ë„ˆë¬´ ê°„ë‹¨í•œ ê²½ìš°
+                // 3. ì´ë¯¸ ê°€ì…ëœ ì´ë©”ì¼ì¸ ê²½ìš°
+                Debug.LogError("íšŒì›ê°€ì… ì·¨ì†Œ");
                 return;
             }
             if (task.IsFaulted)
             {
-                Debug.LogError("È¸¿ø°¡ÀÔ ½ÇÆĞ");
+                Debug.LogError("íšŒì›ê°€ì… ì‹¤íŒ¨");
             }
             else
             {
@@ -83,10 +84,14 @@ public class UserLoginTestScript
 
                 Debug.LogFormat("Firebase user created successfully: {0} ({1})",
                     newUser.DisplayName, newUser.UserId);
-                Debug.Log("È¸¿ø°¡ÀÔ ¼º°ø!");
+                Debug.Log("íšŒì›ê°€ì… ì„±ê³µ!");
+                SceneManager.LoadSceneAsync("LoginScene");
                 return;
             }
-        });
+        }, TaskScheduler.FromCurrentSynchronizationContext());
+        // ë¹„ë™ê¸° ì²˜ë¦¬ ì¤‘(ì„œë¸ŒìŠ¤ë ˆë“œì—ì„œ ì‹¤í–‰ ì¤‘ì¸)ì¸ taskë¥¼ ë©”ì¸ ìŠ¤ë ˆë“œë¡œ ê°–ê³  ì˜¤ê¸° ìœ„í•œ ì½”ë“œ
+        // using System.Threading.Tasks í•„ìš”
+        // í•´ë‹¹ ì½”ë“œë¥¼ í†µí•´ Scene ì „í™˜ì´ ê°€ëŠ¥í•´ì§
     }
 
     public void LoginUser(string email, string password)
@@ -94,19 +99,19 @@ public class UserLoginTestScript
         auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(task => {
             if (task.IsCanceled)
             {
-                Debug.LogError("·Î±×ÀÎ Ãë¼Ò");
+                Debug.LogError("ë¡œê·¸ì¸ ì·¨ì†Œ");
                 return;
             }
             if (task.IsFaulted)
             {
-                Debug.LogError("·Î±×ÀÎ ½ÇÆĞ");
+                Debug.LogError("ë¡œê·¸ì¸ ì‹¤íŒ¨");
                 return;
             }
 
             Firebase.Auth.FirebaseUser newUser = task.Result;
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 newUser.DisplayName, newUser.UserId);
-            Debug.Log("·Î±×ÀÎ ¼º°ø!");
+            Debug.Log("ë¡œê·¸ì¸ ì„±ê³µ!");
         });
 
         user = auth.CurrentUser;
@@ -123,6 +128,6 @@ public class UserLoginTestScript
     public void LogOut()
     {
         auth.SignOut();
-        Debug.Log("·Î±×¾Æ¿ô");
+        Debug.Log("ë¡œê·¸ì•„ì›ƒ");
     }
 }

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +10,6 @@ public class LoginSystemTest : MonoBehaviour
 
     public Text outputText;
 
-
     void Start()
     {
         UserLoginTestScript.Instance.LoginState += OnChangedState;
@@ -19,8 +18,8 @@ public class LoginSystemTest : MonoBehaviour
 
     public void OnChangedState(bool sign)
     {
-        outputText.text = sign ? "�α��� : " : "�α׾ƿ� : ";
-        outputText.text += UserLoginTestScript.Instance.UserId;
+        //outputText.text = sign ? "로그인 : " : "로그아웃 : ";
+        //outputText.text += UserLoginTestScript.Instance.UserId;
     }
 
     public void Create()
