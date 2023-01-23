@@ -4,6 +4,7 @@ using Firebase.Auth;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using Firebase.Database;
 using System.Threading.Tasks;
 
 public class UserLoginTestScript
@@ -24,6 +25,7 @@ public class UserLoginTestScript
 
     private FirebaseAuth auth;  // 로그인 / 회원가입 등에 사용
     private FirebaseUser user;  // 인증이 완료된 유저 정보
+    private DatabaseReference m_Reference;  // 데이터베이스 접근을 위한 객체
 
     public string UserId => user.UserId;
 
@@ -32,8 +34,10 @@ public class UserLoginTestScript
     public void Init()
     {
         auth = FirebaseAuth.DefaultInstance;
+        m_Reference = FirebaseDatabase.DefaultInstance.RootReference;
+
         // 임시처리
-        if(auth.CurrentUser != null)
+        if (auth.CurrentUser != null)
         {
             LogOut();
         }
@@ -62,7 +66,7 @@ public class UserLoginTestScript
         }
     }
 
-    public void CreateUser(string email, string password)
+    public void CreateUser(string email, string password, string nickname)
     {
         auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task => {
             if(task.IsCanceled)
@@ -85,6 +89,10 @@ public class UserLoginTestScript
                 Debug.LogFormat("Firebase user created successfully: {0} ({1})",
                     newUser.DisplayName, newUser.UserId);
                 Debug.Log("회원가입 성공!");
+
+                // 닉네임 설정
+                m_Reference.Child("users").Child(newUser.UserId).Child("nickname").SetValueAsync(nickname);
+
                 SceneManager.LoadSceneAsync("LoginScene");
                 return;
             }

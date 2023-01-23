@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class LoginSystemTest : MonoBehaviour
 {
+    public InputField nickname;
     public InputField email;
     public InputField password;
 
@@ -24,10 +25,11 @@ public class LoginSystemTest : MonoBehaviour
 
     public void Create()
     {
+        string n = nickname.text;
         string e = email.text;
         string p = password.text;
 
-        UserLoginTestScript.Instance.CreateUser(e, p);
+        UserLoginTestScript.Instance.CreateUser(e, p, n);
     }
 
     public void LogIn()

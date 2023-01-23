@@ -626,6 +626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851eaea5ee46d814e907c4d74ffb5c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nickname: {fileID: 93294372}
   email: {fileID: 2001437468}
   password: {fileID: 1469518718}
   outputText: {fileID: 0}
@@ -1867,18 +1868,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: LoginSystemTest, Assembly-CSharp
         m_MethodName: Create
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 387251832}
-        m_TargetAssemblyTypeName: LoginSystemTest, Assembly-CSharp
-        m_MethodName: OnChangedState
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
