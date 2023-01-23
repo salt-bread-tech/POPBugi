@@ -47,7 +47,7 @@ public class AuthController : MonoBehaviour
        auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task => {
             if (!task.IsCanceled && !task.IsFaulted)
             {
-                Firebase.Auth.FirebaseUser newUser = task.Result;
+                FirebaseUser newUser = task.Result;
 
                 Debug.LogFormat("Firebase user created successfully: {0} ({1})",
                     newUser.DisplayName, newUser.UserId);
@@ -56,6 +56,10 @@ public class AuthController : MonoBehaviour
             }
             else
             {
+               // 회원가입 실패한 경우
+               // 1. 이메일이 비정상인 경우
+               // 2. 비밀번호가 너무 간단한 경우
+               // 3. 이미 가입된 이메일인 경우
                 Debug.Log("회원가입 실패");
                 return;
             }
@@ -68,7 +72,7 @@ public class AuthController : MonoBehaviour
             if (task.IsCanceled)
             {
                 Debug.LogError("SignInWithEmailAndPasswordAsync was canceled.");
-                Debug.Log("로그인 실패");
+                Debug.Log("로그인 취소");
                 return;
             }
             if (task.IsFaulted)

@@ -287,8 +287,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 97363969}
   m_TextComponent: {fileID: 593866032}
   m_Placeholder: {fileID: 1041387306}
-  m_ContentType: 0
-  m_InputType: 0
+  m_ContentType: 7
+  m_InputType: 2
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
