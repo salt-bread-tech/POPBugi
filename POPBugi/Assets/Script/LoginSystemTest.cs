@@ -8,6 +8,7 @@ public class LoginSystemTest : MonoBehaviour
     public InputField nickname;
     public InputField email;
     public InputField password;
+    public InputField rePassword;
 
     public Text outputText;
 
@@ -28,8 +29,16 @@ public class LoginSystemTest : MonoBehaviour
         string n = nickname.text;
         string e = email.text;
         string p = password.text;
+        string rp = rePassword.text;
 
-        UserLoginTestScript.Instance.CreateUser(e, p, n);
+        if (p == rp)
+        {
+            UserLoginTestScript.Instance.CreateUser(e, p, n);
+        }
+        else
+        {
+            Debug.Log("비밀번호가 일치하지 않습니다.");
+        }
     }
 
     public void LogIn()
