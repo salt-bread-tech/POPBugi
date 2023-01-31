@@ -629,6 +629,7 @@ MonoBehaviour:
   nickname: {fileID: 93294372}
   email: {fileID: 2001437468}
   password: {fileID: 1469518718}
+  rePassword: {fileID: 585719884}
   outputText: {fileID: 0}
 --- !u!1 &390287229
 GameObject:

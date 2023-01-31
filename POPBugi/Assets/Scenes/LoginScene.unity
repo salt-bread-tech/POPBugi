@@ -402,10 +402,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nickname: {fileID: 0}
-  email: {fileID: 0}
-  password: {fileID: 0}
+  email: {fileID: 1720627921}
+  password: {fileID: 2092801876}
   rePassword: {fileID: 0}
-  outputText: {fileID: 0}
 --- !u!1 &516787826
 GameObject:
   m_ObjectHideFlags: 0

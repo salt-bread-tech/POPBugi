@@ -24,7 +24,7 @@ public class UserLoginTestScript
     }
 
     private FirebaseAuth auth;  // 로그인 / 회원가입 등에 사용
-    private FirebaseUser user;  // 인증이 완료된 유저 정보
+    public FirebaseUser user;  // 인증이 완료된 유저 정보
     private DatabaseReference m_Reference;  // 데이터베이스 접근을 위한 객체
 
     public string UserId => user.UserId;
@@ -50,7 +50,7 @@ public class UserLoginTestScript
     {
         if(auth.CurrentUser != user)
         {
-            bool signed = (auth.CurrentUser != user && auth.CurrentUser != null);
+            bool signed = user != auth.CurrentUser && auth.CurrentUser != null;
             if(!signed && user != null)
             {
                 Debug.Log("로그아웃");
@@ -60,13 +60,13 @@ public class UserLoginTestScript
             user = auth.CurrentUser;
             if (signed)
             {
-                Debug.Log("로그인");
+                Debug.Log("로그인" + user.UserId);
                 LoginState?.Invoke(true);
             }
         }
     }
 
-    public void CreateUser(string email, string password, string nickname)
+    public void CreateUser(string email, string password, string nickname, int score)
     {
         auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task => {
             if(task.IsCanceled)
@@ -92,6 +92,7 @@ public class UserLoginTestScript
 
                 // 닉네임 설정
                 m_Reference.Child("users").Child(newUser.UserId).Child("nickname").SetValueAsync(nickname);
+                m_Reference.Child("users").Child(newUser.UserId).Child("score").SetValueAsync(score);
 
                 SceneManager.LoadSceneAsync("LoginScene");
                 return;
@@ -120,17 +121,9 @@ public class UserLoginTestScript
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 newUser.DisplayName, newUser.UserId);
             Debug.Log("로그인 성공!");
-        });
 
-        user = auth.CurrentUser;
-        Debug.Log(user.UserId);
-
-        
-        if (user != null)
-        {
             SceneManager.LoadSceneAsync("MainScene");
-        }
-        
+        }, TaskScheduler.FromCurrentSynchronizationContext());
     }
 
     public void LogOut()

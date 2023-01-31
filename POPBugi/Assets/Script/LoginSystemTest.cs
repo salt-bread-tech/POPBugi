@@ -10,8 +10,6 @@ public class LoginSystemTest : MonoBehaviour
     public InputField password;
     public InputField rePassword;
 
-    public Text outputText;
-
     void Start()
     {
         UserLoginTestScript.Instance.LoginState += OnChangedState;
@@ -30,10 +28,11 @@ public class LoginSystemTest : MonoBehaviour
         string e = email.text;
         string p = password.text;
         string rp = rePassword.text;
+        int s = 0;
 
         if (p == rp)
         {
-            UserLoginTestScript.Instance.CreateUser(e, p, n);
+            UserLoginTestScript.Instance.CreateUser(e, p, n, s);
         }
         else
         {
