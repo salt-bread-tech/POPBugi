@@ -10,18 +10,6 @@ using System;
 public class MainUserData : MonoBehaviour
 {
     public Text text;
-    class PlayerData
-    {
-        public string nickName;
-        public int score;
-
-        public PlayerData(string nickName, int score)
-        {
-            this.nickName = nickName;
-            this.score = score;
-        }
-    }
-
     DatabaseReference reference;
     
 
@@ -48,8 +36,11 @@ public class MainUserData : MonoBehaviour
                 var n = "";
                 foreach(var item in snapshot.Children)
                 {
-                    Debug.Log("당신의 스코어: " + item.Child("score").Value);
-                    n = (string)item.Child("score").Value;
+                    if (item.Key.Equals(UserLoginTestScript.Instance.user.UserId))
+                    {
+                        n = item.Child("score").Value.ToString();
+                        break;
+                    }
                 }
                 text.text = n;
                 
