@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LoginSystemTest : MonoBehaviour
+public class LoginSystemTest : MonoBehaviour    // 데이터를 입력 받고 UserLoginTestScript 에 던져서 로그인, 회원가입 수행
 {
     public InputField nickname;
     public InputField email;
@@ -22,7 +22,7 @@ public class LoginSystemTest : MonoBehaviour
         //outputText.text += UserLoginTestScript.Instance.UserId;
     }
 
-    public void Create()
+    public void Create()    // 회원 가입
     {
         string n = nickname.text;
         string e = email.text;

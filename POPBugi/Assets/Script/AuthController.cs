@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class AuthController : MonoBehaviour
+public class AuthController : MonoBehaviour // ¾È ¾¸
 {
 
     [SerializeField] string email;

@@ -7,8 +7,9 @@ using UnityEngine.SceneManagement;
 using Firebase.Database;
 using System.Threading.Tasks;
 
-public class UserLoginTestScript
+public class UserLoginTestScript    // 파이어베이스를 통한 직접적인 로그인, 회원가입 로직 스크립트
 {
+    // 싱글톤 패턴
     private static UserLoginTestScript instance = null;
     public static UserLoginTestScript Instance
     {
@@ -23,9 +24,9 @@ public class UserLoginTestScript
         }
     }
 
-    private FirebaseAuth auth;  // 로그인 / 회원가입 등에 사용
-    public FirebaseUser user;  // 인증이 완료된 유저 정보
-    private DatabaseReference m_Reference;  // 데이터베이스 접근을 위한 객체
+    private FirebaseAuth auth;  // 로그인, 회원가입 등에 사용
+    public FirebaseUser user;  // 유저 정보
+    private DatabaseReference databaseReference;  // 데이터베이스 접근을 위한 객체
 
     public string UserId => user.UserId;
 
@@ -34,7 +35,7 @@ public class UserLoginTestScript
     public void Init()
     {
         auth = FirebaseAuth.DefaultInstance;
-        m_Reference = FirebaseDatabase.DefaultInstance.RootReference;
+        databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
 
         // 임시처리
         if (auth.CurrentUser != null)
@@ -69,12 +70,9 @@ public class UserLoginTestScript
     public void CreateUser(string email, string password, string nickname, int score)
     {
         auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task => {
-            if(task.IsCanceled)
+            if (task.IsCanceled)
             {
-                // 회원가입 실패한 경우
-                // 1. 이메일이 비정상인 경우
-                // 2. 비밀번호가 너무 간단한 경우
-                // 3. 이미 가입된 이메일인 경우
+                // 회원가입 실패: 이메일이 비정상인 경우
                 Debug.LogError("회원가입 취소");
                 return;
             }
@@ -86,18 +84,15 @@ public class UserLoginTestScript
             {
                 FirebaseUser newUser = task.Result;
 
-                Debug.LogFormat("Firebase user created successfully: {0} ({1})",
-                    newUser.DisplayName, newUser.UserId);
                 Debug.Log("회원가입 성공!");
 
-                // 닉네임 설정
-                m_Reference.Child("users").Child(newUser.UserId).Child("nickname").SetValueAsync(nickname);
-                m_Reference.Child("users").Child(newUser.UserId).Child("score").SetValueAsync(score);
+                databaseReference.Child("users").Child(newUser.UserId).Child("nickname").SetValueAsync(nickname); // 닉네임 설정 
+                databaseReference.Child("users").Child(newUser.UserId).Child("score").SetValueAsync(score);   // 스코어 기본 값
 
                 SceneManager.LoadSceneAsync("LoginScene");
                 return;
             }
-        }, TaskScheduler.FromCurrentSynchronizationContext());
+        }, TaskScheduler.FromCurrentSynchronizationContext());  
         // 비동기 처리 중(서브스레드에서 실행 중인)인 task를 메인 스레드로 갖고 오기 위한 코드
         // using System.Threading.Tasks 필요
         // 해당 코드를 통해 Scene 전환이 가능해짐
@@ -118,8 +113,6 @@ public class UserLoginTestScript
             }
 
             Firebase.Auth.FirebaseUser newUser = task.Result;
-            Debug.LogFormat("User signed in successfully: {0} ({1})",
-                newUser.DisplayName, newUser.UserId);
             Debug.Log("로그인 성공!");
 
             SceneManager.LoadSceneAsync("MainScene");

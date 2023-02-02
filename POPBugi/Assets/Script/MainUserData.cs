@@ -1,22 +1,20 @@
 using UnityEngine;
 
-using Firebase;
 using Firebase.Database;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using System.Threading.Tasks;
-using System;
 
-public class MainUserData : MonoBehaviour
+public class MainUserData : MonoBehaviour   // 유저 데이터 관리 스크립트
 {
-    public Text text;
-    DatabaseReference reference;
+    public Text scoreText; // 점수를 띄우는 텍스트
+    DatabaseReference databaseReference;
     
-
     void Start()
     {
-        reference = FirebaseDatabase.DefaultInstance.RootReference;
-        if(UserLoginTestScript.Instance.user != null)
+        // 데이터베이스 초기 설정
+        databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
+        if (UserLoginTestScript.Instance.user != null)
         {
             UpdateUser();
         }
@@ -24,11 +22,11 @@ public class MainUserData : MonoBehaviour
 
     private void UpdateUser()
     {
-        reference.Child("users").GetValueAsync().ContinueWith(task =>
+        databaseReference.Child("users").GetValueAsync().ContinueWith(task =>
         {
-            if (task.IsFaulted)
+            if (task.IsFaulted || task.IsCanceled)
             {
-
+                Debug.Log("유저 데이터를 불러오지 못했습니다.");
             }
             else
             {
@@ -42,18 +40,17 @@ public class MainUserData : MonoBehaviour
                         break;
                     }
                 }
-                text.text = n;
-                
+                scoreText.text = n;
             }
         }, TaskScheduler.FromCurrentSynchronizationContext());
     }
 
     public void OnClickUpdateScore()
     {
-        int n = int.Parse(text.text) + 1;
+        int n = int.Parse(scoreText.text) + 1;
         Dictionary<string, object> childUpdates = new Dictionary<string, object>();
         childUpdates["/users/" + UserLoginTestScript.Instance.user.UserId + "/" + "score"] = n;
-        text.text = n.ToString();
-        reference.UpdateChildrenAsync(childUpdates);
+        scoreText.text = n.ToString();
+        databaseReference.UpdateChildrenAsync(childUpdates);
     }
 }

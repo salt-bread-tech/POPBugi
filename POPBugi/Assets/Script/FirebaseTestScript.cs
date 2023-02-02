@@ -19,8 +19,6 @@ public class FirebaseTestScript : MonoBehaviour
         WriteUserData("3", "dddd");
 
         ReadUserData();
-
-
     }
 
     void ReadUserData()
