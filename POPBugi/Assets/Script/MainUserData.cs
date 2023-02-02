@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 public class MainUserData : MonoBehaviour   // 유저 데이터 관리 스크립트
 {
     public Text scoreText; // 점수를 띄우는 텍스트
+    public Text nicknameText;   // 소셜에서 닉네임 띄우는 텍스트
     DatabaseReference databaseReference;
     
     void Start()
@@ -31,16 +32,20 @@ public class MainUserData : MonoBehaviour   // 유저 데이터 관리 스크립트
             else
             {
                 DataSnapshot snapshot = task.Result;
-                var n = "";
-                foreach(var item in snapshot.Children)
+                var touchCount = "";
+                var nickname = "";
+
+                foreach (var item in snapshot.Children)
                 {
                     if (item.Key.Equals(UserLoginTestScript.Instance.user.UserId))
                     {
-                        n = item.Child("score").Value.ToString();
+                        touchCount = item.Child("score").Value.ToString();  // 터치 수 가져오기
+                        nickname = item.Child("nickname").Value.ToString(); // 닉네임 가져오기
                         break;
                     }
                 }
-                scoreText.text = n;
+                scoreText.text = touchCount;    // 터치 수 띄우기
+                nicknameText.text = nickname;   // 닉네임 띄우기
             }
         }, TaskScheduler.FromCurrentSynchronizationContext());
     }

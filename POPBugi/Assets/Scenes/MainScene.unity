@@ -3775,6 +3775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 2103019868}
+  nicknameText: {fileID: 1346930020}
 --- !u!1 &1870134546
 GameObject:
   m_ObjectHideFlags: 0
