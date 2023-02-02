@@ -15,4 +15,15 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("LoginScene");
     }
+
+    public void MainToHome()
+    {
+        SceneManager.LoadScene("HomeScene");
+    }
+
+    public void HomeToMain()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
 }

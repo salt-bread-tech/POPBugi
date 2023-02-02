@@ -4145,7 +4145,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2033340380}
-        m_TargetAssemblyTypeName: Gohome, Assembly-CSharp
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: MainToHome
         m_Mode: 1
         m_Arguments:
@@ -4203,7 +4203,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2033340375}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3583e065ee7871945bfbcac66d37a63e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ff507139e0991a43961b417d15f68f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2058186218

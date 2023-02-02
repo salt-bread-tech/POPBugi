@@ -46,7 +46,6 @@ public class MainUserData : MonoBehaviour
                 
             }
         }, TaskScheduler.FromCurrentSynchronizationContext());
-        
     }
 
     public void OnClickUpdateScore()
