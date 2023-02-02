@@ -41,6 +41,7 @@ public class MainUserData : MonoBehaviour   // 유저 데이터 관리 스크립트
                     {
                         touchCount = item.Child("score").Value.ToString();  // 터치 수 가져오기
                         nickname = item.Child("nickname").Value.ToString(); // 닉네임 가져오기
+
                         break;
                     }
                 }

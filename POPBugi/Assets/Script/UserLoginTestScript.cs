@@ -29,7 +29,7 @@ public class UserLoginTestScript    // 파이어베이스를 통한 직접적인
     private DatabaseReference databaseReference;  // 데이터베이스 접근을 위한 객체
 
     public string UserId => user.UserId;
-
+    
     public Action<bool> LoginState;
 
     public void Init()
