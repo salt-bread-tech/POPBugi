@@ -11,7 +11,7 @@ public class MainUserData : MonoBehaviour   // 유저 데이터 관리 스크립트
     public Text nicknameText;   // 소셜에서 닉네임 띄우는 텍스트
     DatabaseReference databaseReference;
     
-    void Start()
+    void Awake()
     {
         // 데이터베이스 초기 설정
         databaseReference = FirebaseDatabase.DefaultInstance.RootReference;

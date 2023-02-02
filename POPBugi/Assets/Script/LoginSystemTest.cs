@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LoginSystemTest : MonoBehaviour    // 데이터를 입력 받고 UserLoginTestScript 에 던져서 로그인, 회원가입 수행
 {
@@ -48,5 +49,6 @@ public class LoginSystemTest : MonoBehaviour    // 데이터를 입력 받고 Us
     public void LogOut()
     {
         UserLoginTestScript.Instance.LogOut();
+        SceneManager.LoadSceneAsync("LoginScene");
     }
 }

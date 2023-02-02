@@ -37,12 +37,6 @@ public class UserLoginTestScript    // 파이어베이스를 통한 직접적인
         auth = FirebaseAuth.DefaultInstance;
         databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
 
-        // 임시처리
-        if (auth.CurrentUser != null)
-        {
-            LogOut();
-        }
-
         auth.StateChanged += OnChanged; // 계정 상태가 바뀔 때마다 호출됨
     }
 
