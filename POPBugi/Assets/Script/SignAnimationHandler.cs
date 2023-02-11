@@ -9,7 +9,11 @@ public class SignAnimationHandler : MonoBehaviour
     public void OnEnterNextScene()
     {
         if (UserLoginTestScript.Instance.signupSuccess)
+        {
             SceneManager.LoadSceneAsync("LoginScene");
+            UserLoginTestScript.Instance.signupSuccess = false;
+        }
+
     }
     #endregion Methods
 }
