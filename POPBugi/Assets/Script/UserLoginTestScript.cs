@@ -68,12 +68,12 @@ public class UserLoginTestScript    // 파이어베이스를 통한 직접적인
             if (task.IsCanceled)
             {
                 // 회원가입 실패: 이메일이 비정상인 경우
-                Debug.LogError("회원가입 취소");
+                signupstate.SUB("회원가입 취소");
                 return;
             }
             if (task.IsFaulted)
             {
-                Debug.LogError("회원가입 실패");
+                signupstate.SUB("회원가입 실패");
             }
             else
             {
@@ -84,7 +84,7 @@ public class UserLoginTestScript    // 파이어베이스를 통한 직접적인
                 databaseReference.Child("users").Child(newUser.UserId).Child("nickname").SetValueAsync(nickname); // 닉네임 설정 
                 databaseReference.Child("users").Child(newUser.UserId).Child("score").SetValueAsync(score);   // 스코어 기본 값
 
-                SceneManager.LoadSceneAsync("LoginScene");
+             
                 return;
             }
         }, TaskScheduler.FromCurrentSynchronizationContext());  

@@ -628,7 +628,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851eaea5ee46d814e907c4d74ffb5c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signupstate: {fileID: 0}
   nickname: {fileID: 93294372}
   email: {fileID: 2001437468}
   password: {fileID: 1469518718}
@@ -2171,6 +2170,7 @@ GameObject:
   - component: {fileID: 2094103698}
   - component: {fileID: 2094103697}
   - component: {fileID: 2094103696}
+  - component: {fileID: 2094103699}
   m_Layer: 5
   m_Name: TostImage
   m_TagString: Untagged
@@ -2257,3 +2257,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094103694}
   m_CullTransparentMesh: 1
+--- !u!114 &2094103699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094103694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8933b07abd988a8469b814e3233ca8ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
