@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LoginSystemTest : MonoBehaviour    // 데이터를 입력 받고 UserLoginTestScript 에 던져서 로그인, 회원가입 수행
 {
-    public SignUpState signupstate;
+    
 
     public InputField nickname;
     public InputField email;
@@ -15,9 +15,9 @@ public class LoginSystemTest : MonoBehaviour    // 데이터를 입력 받고 Us
 
     void Start()
     {
-        signupstate = FindObjectOfType<SignUpState>();
         UserLoginTestScript.Instance.LoginState += OnChangedState;
         UserLoginTestScript.Instance.Init();
+        UserLoginTestScript.Instance.signupstate = FindObjectOfType<SignUpState>();
     }
 
     public void OnChangedState(bool sign)

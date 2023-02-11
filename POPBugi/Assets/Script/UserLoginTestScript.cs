@@ -6,9 +6,11 @@ using System;
 using UnityEngine.SceneManagement;
 using Firebase.Database;
 using System.Threading.Tasks;
+using UnityEngine.UI;
 
 public class UserLoginTestScript    // 파이어베이스를 통한 직접적인 로그인, 회원가입 로직 스크립트
 {
+    public SignUpState signupstate;
     // 싱글톤 패턴
     private static UserLoginTestScript instance = null;
     public static UserLoginTestScript Instance
@@ -36,7 +38,6 @@ public class UserLoginTestScript    // 파이어베이스를 통한 직접적인
     {
         auth = FirebaseAuth.DefaultInstance;
         databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
-
         auth.StateChanged += OnChanged; // 계정 상태가 바뀔 때마다 호출됨
     }
 
@@ -78,7 +79,7 @@ public class UserLoginTestScript    // 파이어베이스를 통한 직접적인
             {
                 FirebaseUser newUser = task.Result;
 
-                Debug.Log("회원가입 성공!");
+                signupstate.SUB("회원가입 성공");
 
                 databaseReference.Child("users").Child(newUser.UserId).Child("nickname").SetValueAsync(nickname); // 닉네임 설정 
                 databaseReference.Child("users").Child(newUser.UserId).Child("score").SetValueAsync(score);   // 스코어 기본 값
