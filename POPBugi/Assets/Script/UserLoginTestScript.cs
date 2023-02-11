@@ -10,6 +10,8 @@ using UnityEngine.UI;
 
 public class UserLoginTestScript    // 파이어베이스를 통한 직접적인 로그인, 회원가입 로직 스크립트
 {
+    public bool signupSuccess = false;
+
     public SignUpState signupstate;
     // 싱글톤 패턴
     private static UserLoginTestScript instance = null;
@@ -77,6 +79,7 @@ public class UserLoginTestScript    // 파이어베이스를 통한 직접적인
             }
             else
             {
+                signupSuccess = true;
                 FirebaseUser newUser = task.Result;
 
                 signupstate.SUB("회원가입 성공");

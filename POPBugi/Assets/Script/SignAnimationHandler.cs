@@ -8,7 +8,8 @@ public class SignAnimationHandler : MonoBehaviour
     #region Methods
     public void OnEnterNextScene()
     {
-        SceneManager.LoadSceneAsync("LoginScene");
+        if (UserLoginTestScript.Instance.signupSuccess)
+            SceneManager.LoadSceneAsync("LoginScene");
     }
     #endregion Methods
 }
