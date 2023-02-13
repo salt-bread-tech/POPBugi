@@ -122,4 +122,27 @@ public class UserLoginTestScript    // 파이어베이스를 통한 직접적인
         auth.SignOut();
         Debug.Log("로그아웃");
     }
+
+    public void DestroyUser(string str)
+    {
+        string signOut = "회원탈퇴";
+        string cUser = user.UserId;
+        if (user == null || str.ToString() != signOut.ToString())
+        {
+            Debug.Log("입력한 문자와 일치하지 않습니다. 다시 입력해주세요.");
+            return;
+        }
+        user.DeleteAsync().ContinueWith(task =>
+        {
+            if (task.IsFaulted || task.IsCanceled)
+            {
+                Debug.Log("회원 탈퇴에 실패했습니다.");
+                return;
+            }
+            databaseReference.Child("users").Child(cUser).RemoveValueAsync();
+            Debug.Log("회원 탈퇴가 성공적으로 이루어졌습니다.");
+            SceneManager.LoadSceneAsync("LoginScene");
+
+        }, TaskScheduler.FromCurrentSynchronizationContext());
+    }
 }
